@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>10 Pitches - Investor Game</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="logo">10 Pitches</div>
+      <div class="capital-display">
+        <div>Capital</div>
+        <div id="capitalValue" class="capital-value">$100,000</div>
+      </div>
+      <div class="progress-info">
+        <span id="pitchCounter">Pitch 1 of 10</span>
+      </div>
+    </header>
 
+    <main class="main">
+      <section class="card-stage" id="cardStage">
+        <div class="loading" id="loadingState">Loading your first founder...</div>
+      </section>
+
+      <section class="decision-panel" id="decisionPanel">
+        <div class="ask-row">
+          <div>
+            <div class="label">Ask</div>
+            <div id="askValue">-</div>
+          </div>
+          <div class="slider-group">
+            <label for="investSlider">Investment Amount</label>
+            <input type="range" id="investSlider" min="0" max="50000" step="1000" value="15000" />
+            <div class="slider-values">
+              <span id="sliderMin">$0</span>
+              <span id="sliderCurrent">$15,000</span>
+              <span id="sliderMax">$50,000</span>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn secondary" id="passBtn">Pass</button>
+          <button class="btn primary" id="investBtn">Invest</button>
+        </div>
+        <div class="helper" id="helperText">Listen carefully. You can't go back.</div>
+      </section>
+    </main>
+
+    <div class="ending" id="ending">
+      <div class="ending-overlay" id="endingOverlay">3 Years Later...</div>
+      <div class="timeline" id="timeline"></div>
+      <div class="summary" id="summary" hidden>
+        <h2>Portfolio Revealed</h2>
+        <div class="networth">Final Capital: <span id="finalCapital">$0</span></div>
+        <div class="archetype" id="archetype"></div>
+        <div class="notables">
+          <h3>Notable Outcomes</h3>
+          <ul id="notableList"></ul>
+        </div>
+        <div class="share-block">
+          <textarea id="shareText" readonly></textarea>
+          <button class="btn secondary" id="copyShare">Copy Summary</button>
+          <button class="btn primary" id="replayBtn">Play Again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
